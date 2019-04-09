@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  {% include head.html %}
+
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+    <!-- enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>
+      {% if page.title == "home" %}
+      {{ site.name }} &middot; {{ site.tagline }}
+      {% else %}
+      {{ page.title }} &middot; {{ site.name }}
+      {% endif %}
+    </title>
+  
+    <!-- css -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+  
+    <!-- rss -->
+    {% feed_meta %}
+  </head>
 
   <body>
     <div class="container">
       <header>
         <nav>
           <ul>
-            <li class="brand"><a href="/"><img src="/badge.png" alt="Site logo">{{ site.name }}</a> <small>{{ site.tagline }}</small></li>
             <li><a href="/">Home</a></li>
-            <li><a href="/archive">Archive</a></li>
-            <li><a href="/tags">Tags</a></li>
-            <li><a href="/feed.xml">Feed</a></li>
           </ul>
         </nav>
       </header>
@@ -19,6 +36,16 @@
       <main>
         {{ content }}
       </main>
+
+      <footer>
+        &copy; {{ site.time | date: '%Y' }} Jianwei Han.
+        <a href="{{ site.github.repository_url }}">{% include code.svg %}</a>
+        <a href="{{ site.github.owner_url }}">{% include github.svg %}</a>
+        <a href="https://twitter.com/hanjianwei">{% include twitter.svg %}</a>
+        <a href="mailto:blog@hanjianwei.com">{% include email.svg %}</a>
+        <a href="/feed.xml">{% include rss.svg %}</a>
+      </footer>
+
     </div>
   </body>
 </html>

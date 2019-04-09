@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="page">
+<div class="post">
   <article>
     <h1>{{ page.title }}</h1>
     <time>{{ page.date | date_to_string }}</time>
@@ -11,5 +11,16 @@ layout: default
   <aside class="comments">
     <div id="disqus_thread"></div>
   </aside>
-  {% include disqus.html %}
+
+  <script>
+    var disqus_shortname = '{{ site.disqus }}';
+    var disqus_identifier = '{{ page.url }}';
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
 </div>
