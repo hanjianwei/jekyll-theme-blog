@@ -5,6 +5,11 @@ html {
 }
 @media (min-width: 38em) {
   html {
+    font-size: 18px;
+  }
+}
+@media (min-width: 56em) {
+  html {
     font-size: 20px;
   }
 }
@@ -15,7 +20,6 @@ h1, h2, h3 {
 
 h1 {
   font-size: 1.6rem;
-  margin-bottom: 0;
 }
 h2 {
   font-size: 1.5rem;
