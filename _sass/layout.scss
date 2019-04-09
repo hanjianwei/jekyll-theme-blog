@@ -1,11 +1,9 @@
 body {
-  background-color: #333;
   display: flex;
   justify-content: center;
 }
 
 .container {
-  background-color: #eee;
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -28,17 +26,13 @@ body {
 header nav {
   ul {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 0;
 
     li {
       list-style: none;
-      padding: 1.5rem 1rem;
-
-      &.brand {
-        margin-right: auto;
-      }
+      padding: 1rem 1rem;
     }
   }
 }
@@ -47,9 +41,6 @@ header nav {
   header nav {
     ul {
       justify-content: flex-start;
-    }
-    .brand {
-      display: none;
     }
   }
 }
